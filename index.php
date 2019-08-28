@@ -16,14 +16,15 @@
 
 		$base->exec("SET CHARACTER SET utf8");
 
-		$sql_total="select nombreartículo, sección,precio,paísdeorigen from productos where secciòn='deportes'";
+		$sql_total="select nombreartículo, sección,precio,paísdeorigen from productos where sección='deportes'";
 
 		$resultado=$base->prepare($sql_total);
 		$resultado->execute(array());
 
 		while($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
 
-			echo("Nombre articulo: " . $registro["nombreartículo"] . "Seccion: " . $registro["sección"] . "Precio: " . $registro["precio"] . "Pais de origen: " . $registro["paísdeorigen"] . "<br>");
+			echo("Nombre articulo: " . $registro["nombreartículo"] . " Seccion: " . $registro["sección"] . " Precio: " . $registro["precio"] . " Pais de origen: " . $registro["paísdeorigen"] . "<br>");
+
 		}
 
 		$resultado->closeCursor();
