@@ -16,7 +16,8 @@
 
 		$base->exec("SET CHARACTER SET utf8");
 
-		$sql_total="select nombreartículo, sección,precio,paísdeorigen from productos where sección='deportes'";
+		$sql_total="select nombreartículo, sección,precio,paísdeorigen from productos where sección='deportes' limit 0,3";
+
 
 		$resultado=$base->prepare($sql_total);
 		$resultado->execute(array());
